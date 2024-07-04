@@ -1,0 +1,26 @@
+<script>
+    const id = 'telegram_form' /* ID on Form element */
+    const req = new XMLHttpRequest()
+
+
+    window.addEventListener('DOMContentLoaded', event => {
+        const form = document.getElementById(id)
+        console.log(form)
+        form.addEventListener('submit', event => {
+
+        const token = "7104922029:AAG0p04S4CerCUVBSjgBJoEw_Fe0jxSAQns";
+        const url = `https://api.telegram.org/bot${token}/sendMessage`
+
+
+        const obj = {
+            chat_id: "-1002114789202", 
+            text: `name: ${document.querySelector('#name').value}\nemail: ${document.querySelector('#email').value}\ntelegram: ${document.querySelector('#telegram').value}\nmessage: ${document.querySelector('#message').value}`
+        };
+
+
+        req.open("POST", url, true);
+        req.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        req.send(JSON.stringify(obj));
+    })
+})
+</script>
