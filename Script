@@ -8,7 +8,7 @@
         console.log(form)
         form.addEventListener('submit', event => {
 
-        const token = "7104922029:AAG0p04S4CerCUVBSjgBJoEw_Fe0jxSAQns";
+        const token = "7104922029:AAG0p04S4";
         const url = `https://api.telegram.org/bot${token}/sendMessage`
 
 
